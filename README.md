@@ -51,11 +51,22 @@ MovieSir-Infra/
 │   ├── deploy-gpu.yml             # GPU Server 배포
 │   └── README.md
 │
+├── nginx/                     # Nginx 설정
+│   ├── moviesir.conf              # 4개 서브도메인 서버 블록
+│   ├── ssl-params.conf            # TLS 1.2/1.3 보안 설정
+│   └── README.md
+│
+├── scripts/                   # 서버 자동화 스크립트
+│   ├── app-server/                # App Server 스크립트
+│   │   ├── disk-alert.sh              # 디스크 사용률 모니터링
+│   │   ├── healthcheck.sh             # 서버 상태 점검
+│   │   └── weekly-cleanup.sh          # 주간 정리
+│   ├── gpu-server/                # GPU Server 스크립트
+│   │   └── backup-db.sh               # PostgreSQL 자동 백업
+│   └── README.md
+│
 ├── docs/                      # 문서 및 이미지
 │   └── moviesir_infra_arch.drawio.png
-│
-├── nginx/                     # Nginx 설정 (예정)
-│   └── README.md
 │
 └── README.md                  # 현재 문서
 ```
@@ -64,10 +75,12 @@ MovieSir-Infra/
 
 ## 문서
 
-| 문서                                      | 설명                       |
-| ----------------------------------------- | -------------------------- |
-| [Docker Compose 구성](./docker/README.md) | 서버별 Docker Compose 설정 |
-| [GitHub Actions CI/CD](./cicd/README.md)  | 자동 배포 워크플로우       |
+| 문서                                           | 설명                       |
+| ---------------------------------------------- | -------------------------- |
+| [Docker Compose 구성](./docker/README.md)      | 서버별 Docker Compose 설정 |
+| [GitHub Actions CI/CD](./cicd/README.md)       | 자동 배포 워크플로우       |
+| [Nginx 설정](./nginx/README.md)                | 서브도메인 및 SSL 설정     |
+| [서버 자동화 스크립트](./scripts/README.md)    | 모니터링, 백업, 정리 스크립트 |
 
 <br />
 
